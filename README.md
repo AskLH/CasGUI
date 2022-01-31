@@ -6,4 +6,4 @@ Her er det første flowchart
 
 Her er den først GUI skitsen
 
-![Alt Text](GUIskitse.jpg)
+![Alt Text](GUIskitse1.jpg)
