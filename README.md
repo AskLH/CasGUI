@@ -5,4 +5,5 @@ Her er det første flowchart
 ![Alt Text](FLOWIE.png)
 
 Her er den først GUI skitsen
+
 ![Alt Text](GUI skitse.jpg)
