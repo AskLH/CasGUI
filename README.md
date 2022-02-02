@@ -10,4 +10,4 @@ Her er den først GUI skitsen
 
 Her er første version af vores UML diagram. Det skal siges at alt fra flowchart, uml og skitser opdateres løbende jo længere ind i projektet vi kommer 
 
-![Alt Text](UML CASGUI.png)
+![Alt Text](UMLCASGUI.png)
