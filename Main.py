@@ -3,6 +3,7 @@ from tkinter import *
 from tkinter.ttk import *
 
 
+
 class mainWindowClass:
     def __init__(self):
         self.target = 4500
