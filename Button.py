@@ -5,53 +5,32 @@ from tkinter import ttk
 import tkinter as tk
 
 
-class payWindowClass:
+class InputButton:
 
     def __init__(self, master):
         self.master = master
-        self.payWindow = Toplevel(self.master.root)
-        self.payWindow.title("Pay Window")
-        self.payWindow.geometry("200x200")
+        self.InputButton = Toplevel(self.master.root)
+        self.InputButton.title("Pay Window")
+        self.InputButton.geometry("200x200")
 
-        Label(self.payWindow,
-              text="Pay").pack()
+        Label(self.InputButton,
+              text="Graf ligning").pack()
 
-        self.money = Entry(self.payWindow)
+        self.money = Entry(self.InputButton)
         self.money.pack()
 
-        self.button = Button(self.payWindow, text="betal", command= self.addMoney)
+        self.button = Button(self.InputButton, text="Tegn", command= self.addMoney)
         self.button.pack()
-
-        self.names = list(self.master.fodboldtur.keys())
-
-        self.option_var = tk.StringVar(self.payWindow)
-        self.option_var.set("Vælg et navn")
-
-
-        self.label = ttk.Label(self.payWindow,).pack()
-
-        self.option_menu = OptionMenu(
-            self.payWindow,
-            self.option_var,
-            *self.names).pack()
 
     def addMoney(self):
         try:
             amount = abs(int(self.money.get()))
         except:
-            messagebox.showerror(parent=self.payWindow, title="Beløb fejl!", message="Prøv igen.\nKun hele tal!")
+            messagebox.showerror(parent=self.InputButton, title="Beløb fejl!", message="Prøv igen.\nKun hele tal!")
             return
 
-        if self.option_var.get() == "Vælg et navn":
-            messagebox.showerror(parent=self.payWindow, title="HALLO! - Mark Kommer ind i fede sko", message="Er\nDu\nDum?")
-            return
 
-        key=self.option_var.get()
-
-        self.master.fodboldtur[key] += amount
-
-        self.master.total += amount
         self.master.progressLabelText.set(f"Indsamlet: {self.master.total} af {self.master.target} kroner:")
         print(f"Indsamlet: {self.master.total} af {self.master.target} kroner!")
         self.master.progress['value'] = self.master.total / self.master.target * 100
-        self.payWindow.destroy()
+        self.InputButton.destroy()
