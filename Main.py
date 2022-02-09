@@ -4,6 +4,10 @@ from tkinter.ttk import *
 import tkinter as tk
 from tkinter import ttk
 from Button import InputButton
+from sympy import symbols
+from sympy.plotting import plot
+from Graf import GrafClass
+import matplotlib
 
 
 
