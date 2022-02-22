@@ -1,41 +1,64 @@
-from sympy.plotting import plot
-from sympy import *
-__author__ = 'Dania'
-import matplotlib
-matplotlib.use('TkAgg')
-import numpy as np
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from matplotlib.figure import Figure
 from tkinter import *
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg,
+NavigationToolbar2Tk)
 
-class mclass:
-    def __init__(self,  window):
-        self.window = window
-        self.box = Entry(window)
-        self.button = Button (window, text="check", command=self.plot)
-        self.box.pack ()
-        self.button.pack()
+# plot function is created for
+# plotting the graph in
+# tkinter window
 
-    def plot (self):
-        x=np.array ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-        v= np.array ([16,16.31925,17.6394,16.003,17.2861,17.3131,19.1259,18.9694,22.0003,22.81226])
-        p= np.array ([16.23697,     17.31653,     17.22094,     17.68631,     17.73641 ,    18.6368,
-            19.32125,     19.31756 ,    21.20247  ,   22.41444   ,  22.11718  ,   22.12453])
 
-        fig = Figure(figsize=(6,6))
-        a = fig.add_subplot(111)
-        a.scatter(v,x,color='red')
-        a.plot(p, range(2 +max(x)),color='blue')
-        a.invert_yaxis()
+def plot():
 
-        a.set_title ("Estimation Grid", fontsize=16)
-        a.set_ylabel("Y", fontsize=14)
-        a.set_xlabel("X", fontsize=14)
+	# the figure that will contain the plot
+	fig = Figure(figsize = (5, 5),
+				dpi = 100)
 
-        canvas = FigureCanvasTkAgg(fig, master=self.window)
-        canvas.get_tk_widget().pack()
-        canvas.draw()
+	# list of squares
+	y = [i**2 for i in range(101)]
 
-window= Tk()
-start= mclass (window)
+	# adding the subplot
+	plot1 = fig.add_subplot(111)
+
+	# plotting the graph
+	plot1.plot(y)
+
+	# creating the Tkinter canvas
+	# containing the Matplotlib figure
+	canvas = FigureCanvasTkAgg(fig,
+							master = window)
+	canvas.draw()
+
+	# placing the canvas on the Tkinter window
+	canvas.get_tk_widget().pack()
+
+	# creating the Matplotlib toolbar
+	toolbar = NavigationToolbar2Tk(canvas,
+								window)
+	toolbar.update()
+
+	# placing the toolbar on the Tkinter window
+	canvas.get_tk_widget().pack()
+
+# the main Tkinter window
+window = Tk()
+
+# setting the title
+window.title('Plotting in Tkinter')
+
+# dimensions of the main window
+window.geometry("500x500")
+
+# button that displays the plot
+plot_button = Button(master = window,
+					command = plot,
+					height = 2,
+					width = 10,
+					text = "Plot")
+
+# place the button
+# in main window
+plot_button.pack()
+
+# run the gui
 window.mainloop()
