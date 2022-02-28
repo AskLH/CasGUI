@@ -8,14 +8,17 @@ NavigationToolbar2Tk)
 # tkinter window
 
 
+
 def plot():
+
+	x = float(plot_Input.get())
 
 	# the figure that will contain the plot
 	fig = Figure(figsize = (5, 5),
 				dpi = 100)
 
 	# list of squares
-	y = [i**2 for i in range(101)]
+	y = [i**x for i in range(101)]
 
 	# adding the subplot
 	plot1 = fig.add_subplot(111)
@@ -56,9 +59,21 @@ plot_button = Button(master = window,
 					width = 10,
 					text = "Plot")
 
+plot_Input = Entry()
+
+variable = StringVar(window)
+variable.set("i**x")
+
+
+plot_tab = OptionMenu(window, variable, "i**x", "two", "three")
+plot_label = Label(window,"skrive værdien for x")
+
 # place the button
 # in main window
+plot_tab.pack()
 plot_button.pack()
+plot_Input.pack()
+plot_label.pack()
 
 # run the gui
 window.mainloop()
