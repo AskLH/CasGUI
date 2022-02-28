@@ -1,3 +1,4 @@
+import tkinter as tk
 from tkinter import *
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg,
@@ -55,8 +56,6 @@ window.geometry("500x500")
 # button that displays the plot
 plot_button = Button(master = window,
 					command = plot,
-					height = 2,
-					width = 10,
 					text = "Plot")
 
 plot_Input = Entry()
@@ -66,14 +65,14 @@ variable.set("i**x")
 
 
 plot_tab = OptionMenu(window, variable, "i**x", "two", "three")
-plot_label = Label(window,"skrive værdien for x")
+#plot_label = Label(window,"skrive værdien for x")
 
 # place the button
 # in main window
-plot_tab.pack()
-plot_button.pack()
-plot_Input.pack()
-plot_label.pack()
+plot_tab.pack(pady = 5, side=tk.TOP)
+plot_Input.pack(pady = 5, side=tk.TOP)
+plot_button.pack(pady = 5, side=tk.TOP)
+#plot_label.pack()
 
 # run the gui
 window.mainloop()
