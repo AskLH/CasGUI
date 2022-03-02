@@ -1,6 +1,8 @@
 # data-visualization
 Trello link: https://trello.com/b/hwHV8EyE/gooey-stuff-2
 
+Kode inspiration: https://www.geeksforgeeks.org/how-to-embed-matplotlib-charts-in-tkinter-gui/
+
 Her er det første flowchart
 ![Alt Text](FLOWIE.png)
 
