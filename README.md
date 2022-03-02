@@ -12,13 +12,11 @@ Her er et opdateret flowchart. Som nok lagt mærke til, har vi nu et bruger inpu
 
 
 Her er den først GUI skitsen
-
 ![Alt Text](GUIskitse1.jpg)
 
-Her er første version af vores UML diagram. Det skal siges at alt fra flowchart, uml og skitser opdateres løbende jo længere ind i projektet vi kommer 
-
+Her er første version af vores UML diagram.
 ![Alt Text](UMLCASGUI.png)
 
-
-
+Her er version 2 af vores UML diagram. 
 ![Alt Text](UML2.png)
+Vi stødte ind i det sjove, hvor vores kode har ændret sig så meget, at det første UML diagram passer mere til vores endelige kode end det andet UML diagram. Det var ret tilfældigt at det skete, og det skyldes primært af, vi indså vi havde overkompliceret koden en del.  
