@@ -17,70 +17,55 @@ print(HexC)
 
 def plot():
 
-	x = float(plot_Input.get())
+	x = float(plot_Input.get()) #variabel til brugerinput
 
-	# the figure that will contain the plot
+	# her bliver størrelsen og opløsningen af grafen defineret
 	fig = Figure(figsize = (5, 5),
 				dpi = 100)
 
-	# list of squares
-	#
-	y = [i**x for i in range(101)]
 
-	# adding the subplot
-	plot1 = fig.add_subplot(111)
+	y = [i**x for i in range(101)] #Funktionen for grafen
+
+	plot1 = fig.add_subplot(111) #
 
 	# plotting the graph
-	plot1.plot(y,c = HexC)
+	plot1.plot(y,c = HexC) #her tegnes grafen med den random generede farve
 
-	# creating the Tkinter canvas
-	# containing the Matplotlib figure
+	#Her laves tk canvasset med matplotlibfigure
 	canvas = FigureCanvasTkAgg(fig,
 							master = window)
 	canvas.draw()
 
-	# placing the canvas on the Tkinter window
+	#Vinduet laves
 	canvas.get_tk_widget().pack()
 
-	# creating the Matplotlib toolbar
-	toolbar = NavigationToolbar2Tk(canvas,
-								window)
-	toolbar.update()
-
-	# placing the toolbar on the Tkinter window
-	canvas.get_tk_widget().pack()
-
-
-# the main Tkinter window
+#vi skaber et vindue
 window = Tk()
 
-# setting the title
 window.title('Plotting in Tkinter')
 
-# dimensions of the main window
 window.geometry("500x500")
 
-# button that displays the plot
+#der laves en knap til at plotte grafen
 plot_button = Button(master = window,
 					command = plot,
 					text = "Plot")
 
-plot_Input = Entry()
+plot_Input = Entry() #en funktion der tager mod bruger input i vinduet
 
+#der laves en dropdown menu med funktionen variabler
 variable = StringVar(window)
 variable.set("i**x")
-
-
+#vi skaber menu
 plot_tab = OptionMenu(window, variable, "i**x", "two", "three")
 plot_label = Label(window, text = "skriv værdien for x")
 
-# place the button
-# in main window
+#knappen, inputtet, dropdownmenuen og et label bliver plottet ind i vinduet
 plot_tab.pack(pady = 5, side=tk.TOP)
 plot_label.pack()
 plot_Input.pack(pady = 5, side=tk.TOP)
 plot_button.pack(pady = 5, side=tk.TOP)
 
 
-# run the gui
+
 window.mainloop()
