@@ -1,14 +1,19 @@
 import tkinter as tk
+import random
 from tkinter import *
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg,
 NavigationToolbar2Tk)
 
+
 # plot function is created for
 # plotting the graph in
 # tkinter window
 
-
+colors = random.randint(0,16777215)
+HexC= hex(colors)
+HexC= '#'+ HexC[2:]
+print(HexC)
 
 def plot():
 
@@ -25,7 +30,7 @@ def plot():
 	plot1 = fig.add_subplot(111)
 
 	# plotting the graph
-	plot1.plot(y)
+	plot1.plot(y,c = HexC)
 
 	# creating the Tkinter canvas
 	# containing the Matplotlib figure
