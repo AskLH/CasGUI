@@ -6,6 +6,11 @@ Kode inspiration: https://www.geeksforgeeks.org/how-to-embed-matplotlib-charts-i
 Her er det første flowchart
 ![Alt Text](FLOWIE.png)
 
+Her er et opdateret flowchart. Som nok lagt mærke til, har vi nu et bruger input felt som vi ikke havde i det første. Ellers er der ikke som sådan noget der har ændret sig siden det første flowchart. 
+![Alt Text](Flowchart2.png)
+
+
+
 Her er den først GUI skitsen
 
 ![Alt Text](GUIskitse1.jpg)
