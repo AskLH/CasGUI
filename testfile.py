@@ -24,6 +24,7 @@ def plot():
 				dpi = 100)
 
 	# list of squares
+	#
 	y = [i**x for i in range(101)]
 
 	# adding the subplot
@@ -49,6 +50,7 @@ def plot():
 	# placing the toolbar on the Tkinter window
 	canvas.get_tk_widget().pack()
 
+
 # the main Tkinter window
 window = Tk()
 
@@ -70,14 +72,15 @@ variable.set("i**x")
 
 
 plot_tab = OptionMenu(window, variable, "i**x", "two", "three")
-#plot_label = Label(window,"skrive værdien for x")
+plot_label = Label(window, text = "skriv værdien for x")
 
 # place the button
 # in main window
 plot_tab.pack(pady = 5, side=tk.TOP)
+plot_label.pack()
 plot_Input.pack(pady = 5, side=tk.TOP)
 plot_button.pack(pady = 5, side=tk.TOP)
-#plot_label.pack()
+
 
 # run the gui
 window.mainloop()
